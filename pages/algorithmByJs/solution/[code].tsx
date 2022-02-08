@@ -1,16 +1,17 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-
+import { getData } from "../data";
 const Solution: NextPage = () => {
   const router = useRouter();
   const { code } = router.query;
-  console.log('code = ' + code)
-  debugger
+  if (!code) return <div></div>;
+  let data = getData(code);
+  if (!data) return <div>暂无资源</div>;
   return (
     <div>
       <div>
         <iframe
-          src="//player.bilibili.com/player.html?aid=635997394&bvid=BV1Kb4y1E7rD&cid=493500447&page=1"
+          src={data.src}
           scrolling="no"
           border="0"
           frameborder="no"
