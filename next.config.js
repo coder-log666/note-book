@@ -2,6 +2,7 @@
 module.exports = {
   reactStrictMode: true,
   webpack: (config) => {
+    config.resolve.fallback = { fs: false };
     config.module.rules.push({
       test: /\.(md|woff2|html)$/,
       loader: "emit-file-loader",
