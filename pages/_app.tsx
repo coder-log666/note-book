@@ -1,5 +1,6 @@
 import 'github-markdown-css/github-markdown-light.css';
 import '../styles/globals.css'
+import 'antd/dist/antd.css';
 
 // import '../pages/article/github.css'
 import type { AppProps } from 'next/app'
